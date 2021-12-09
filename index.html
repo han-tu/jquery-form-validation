@@ -55,9 +55,38 @@
             <div class="card-footer text-center">
             </div>
         </div>
+        <div class="w-50 card my-5">
+            <div class="card-header bg-primary">
+            </div>
+            <div class="card-content px-5 pt-3">
+                <h2>Book List</h2>
+                <div class="border-top py-4">
+                    <label for="buku" class="form-label">Nama Buku</label>
+                    <input type="text" id="buku" class="form-control" placeholder="Masukkan Nama Buku..">
+                    <label for="sel1">Select list:</label>
+                    <select class="form-control" id="sel1">
+                        <option>Pilih Buku</option>
+                        
+                    </select>
+                    <button class="btn btn-primary my-3" onclick="addBook()">Tambahkan</button>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+            </div>
+        </div>
+    </div>
 </body>
 
 <script>
+
+    function addBook() {
+        let buku = document.getElementById('buku').value;
+        let htmlStr = "<option>Pilih Buku</option>";
+        htmlStr += ("<option>" + buku + "</option>");
+        $("#sel1").html(htmlStr);
+        console.log(htmlStr);
+    }
+
     let errUname = 0;
     let errPass = 0;
     let errNoHp = 0;
